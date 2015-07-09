@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "Make sure you are running this with Sudo privilages."
+read -e -p "Enter the install: " -i "/var/www/html" FILEPATH;
+sudo mkdir $FILEPATH
+sudo mv files/* $FILEPATH/
+
+cd $FILEPATH
+sudo chmod 0755 * -R                     #Default Permissions
+sudo chown :www-data uploads -R          #This is where the server uploads files and therefore needs write access
+sudo chmod 0770 uploads -R               #This is where the server uploads files and therefore needs write access
+sudo chown :www-data gallery/resources/cache
+sudo chmod 0770 gallery/resources/cache
+

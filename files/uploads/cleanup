@@ -1,0 +1,6 @@
+#!/bin/bash
+cd '/var/www/prom/uploads/images'
+find . -empty -type d -delete
+fdupes -r -q -d -N *
+cd ../
+7z u latest.zip images

@@ -1,0 +1,18 @@
+<Directory "/var/www/html/uploads">
+Options All -Indexes
+    <Files log>
+        deny from all
+    </Files>
+    <Files cleanup>
+        deny from all
+    </Files>
+</Directory>
+
+<Directory "/var/www/html/gallery/resources">
+    <files galleryConfig.ini>
+        deny from all
+    </files>
+    <files UberGallery.php>
+        deny from all
+    </files>
+</Directory>
